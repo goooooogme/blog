@@ -1,0 +1,52 @@
+    <div class="content">
+        <h6 class="content__title">Post</h6>
+        <div class="posts">
+
+            {{#if post.length}}
+            {{#each post}}
+            <div class="post">
+                <div class="header__post">
+                   <h3 class="title__post">{{title}}</h3> 
+                </div>
+                <div class="content__post">
+                    <div class="top__post">
+                        <img src="https://via.placeholder.com/180"  alt="post__image">
+                        <p class="text__post">{{messagePrev}}</p>
+                    </div>
+                    
+                    <div class="bottom__post">
+                        <div class="post__info">
+                            <span>Data: {{daymonth}}</span>
+                            <span>Time: {{time}}</span>
+                        </div>
+                        <div class="button">
+                            <a href="/{{id}}">Посмотреть</a>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            {{/each}}
+            {{else}}
+                <p>Постов сейчас нет</p>
+            {{/if}}
+
+
+        </div>
+    </div>
+    <aside>
+        <h6 class="title__sidebar">Category</h5>
+        {{#if category.length}}
+        
+        <div class="category__post">
+            {{#each category}}
+            <label>
+                <input type="checkbox" />
+                <span>{{title}}</span>
+            </label>
+            {{/each}}
+        </div>
+            
+        {{else}}
+            <p>Курсов нет</p>
+        {{/if}}
+    </aside>

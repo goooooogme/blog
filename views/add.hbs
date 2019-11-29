@@ -1,0 +1,42 @@
+    <div class="content add">
+        <h6 class="content__title">Добавить пост</h6>
+        <form action="/add" method="POST" class="formAddPost">
+            <div class="input-field col s6">
+                <input id="title" name="title" type="text" class="validate" required>
+                <label for="title">Название поста</label>
+                <span class="helper-text" data-error="Введите название" ></span>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="post" name="messagePrev" class="materialize-textarea" minlength="400" maxlength="400" required></textarea>
+                <label for="post">Текст для preview</label>
+                <span class="helper-text" data-error="Введите текст"></span>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="post" name="messageFull" class="materialize-textarea" required></textarea>
+                <label for="post">Полный текст</label>
+                <span class="helper-text" data-error="Введите текст"></span>
+            </div>
+            
+            <!--<div class="file-field input-field">
+            <div class="btn">
+                <span>IMAGE</span>
+                <input type="file" name="file" required>
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+            </div> 
+     -->
+
+            <select class="browser-default" name="select" required>
+                <option value="" disabled selected>Категории</option>
+                {{#if category.length}}
+                    {{#each category}}
+                        <option value="{{title}}">{{title}}</option>
+                    {{/each}}
+                {{/if}}
+            </select>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+        
+    </div>
